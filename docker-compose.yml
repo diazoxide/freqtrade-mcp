@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+  freqtrade-mcp:
+    build: .
+    container_name: freqtrade-mcp
+    environment:
+      - FREQTRADE_API_URL=${FREQTRADE_API_URL:-http://freqtrade:8080}
+      - FREQTRADE_USERNAME=${FREQTRADE_USERNAME:-Freqtrader}
+      - FREQTRADE_PASSWORD=${FREQTRADE_PASSWORD:-SuperSecret1!}
+    volumes:
+      - ./:/app:ro
+    networks:
+      - freqtrade-network
+    restart: unless-stopped
+
+networks:
+  freqtrade-network:
+    external: true
+    name: ${FREQTRADE_NETWORK:-freqtrade}
