@@ -4,7 +4,7 @@ FROM python:3.13-slim
 WORKDIR /app
 
 # Install dependencies
-RUN pip install --no-cache-dir --root-user-action=ignore freqtrade-client "mcp[cli]"
+RUN pip install --no-cache-dir --root-user-action=ignore freqtrade-client>=2025.2 "mcp[cli]>=1.5.0"
 
 # Copy application file
 COPY __main__.py ./
