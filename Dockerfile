@@ -4,7 +4,7 @@ FROM python:3.13-slim
 WORKDIR /app
 
 # Install uv for dependency management
-RUN pip install uv
+RUN pip install --no-cache-dir --root-user-action=ignore uv==0.5.18
 
 # Copy project files
 COPY pyproject.toml uv.lock ./
