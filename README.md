@@ -50,7 +50,7 @@ An MCP server that integrates with the [Freqtrade](https://www.freqtrade.io/) cr
          "-e", "FREQTRADE_API_URL=http://freqtrade:8080",
          "-e", "FREQTRADE_USERNAME=your_username",
          "-e", "FREQTRADE_PASSWORD=your_password",
-         "freqtrade-mcp"
+         "freqtrade-mcp:latest"
        ]
      }
    }
